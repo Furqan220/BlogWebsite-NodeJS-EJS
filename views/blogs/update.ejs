@@ -1,0 +1,47 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  <div class="create-blog content">
+    <form id="updateForm" action="/blogs/update/<%=blog._id%>" method="post">
+      <label for="title">Blog Title:</label>
+        <input id="title" type="text" name="title" required  value="<%=blog.title%>"  >
+        <label for="subtitle">Sub Title:</label>
+        <input id="subtitle" type="text" name="subtitle" required value="<%=blog.subtitle%>">
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" cols="30" rows="10"><%= blog.description %></textarea>
+        <button type="submit">Update</button>
+    </form>
+
+</div>
+
+  <%- include("../partials/footer.ejs") %>
+
+
+  <script>
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   document.getElementById('updateForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+
+//     const blogId = "<%=blog._id%>";
+//     const formData = new FormData(this);
+//     console.log("this is form data ");
+//     console.log(event);
+
+//     fetch(`/blogs/update/${blogId}`, {
+//         method: 'PUT',
+//         body: formData
+//         // Additional headers if needed
+//     })
+//       .then(response => response.json())
+//       .then(data => window.location.href = data.redirect)
+//       .catch(err => console.log(err));
+// });
+//  });
+  </script>
+</body>
+
+</html>
